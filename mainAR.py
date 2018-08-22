@@ -1,11 +1,11 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, render_template
 from flask_cors import CORS 
 app = Flask(__name__)
 @app.route('/cargarImagen')
 def cargarImagen():
-    return "Cargar Imagen"
+    return render_template('cargarImagen.html')
     
-@app.route('/AR')
+@app.route('/AR', methods=['POST'])
 def AR():
     return jsonify({"mensaje":"hola mundo"})
 
